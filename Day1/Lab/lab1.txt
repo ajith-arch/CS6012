@@ -1,0 +1,44 @@
+1. Where is the assertEquals method defined? What does it do? Can we use assertEquals for more than just int types? (Hint: Consult the API for JUnit)
+Ans. The assertEquals method isdefined in the assertions class of junit/jupiter/api. Yes, we can use AssertEquals for more than just int types.
+
+2. Briefly describe what each of the three tests is checking.
+Ans. The first test is checking for the smallest difference between two elements in the array of a zero elements. As the length is less than two it is checking If the method is returning -1 or not.
+
+The second test is looking for the smallest difference between elements in an array of same elements.
+
+The third test is looking for the smallest difference between elements in an array of random elements which contain both negative, positive numbers and zero.
+
+3. Why is our unimplemented findSmallestDiff method passing one of the tests?
+Ans. One of the test case is will pass if the value returned by the method is zero. As our unimplemented method is only returning zero it passes one of the test case.
+
+4. Why are we failing the third test? How should our method be modified to correct this?
+Ans. We're failing the third test because we're not considering the absolute value of the difference. As a result, the smallest difference we find is -8, which happens because we're only comparing differences as negative values. When we get to -8, the preceding element is -8, and the next element is 0.
+
+5. What is the appropriate call to assertEquals for your new test (test 4)?
+For test4, build an assertEquals statement that matches the expected output of findsmallestDiff for the specified input in this test case.
+
+
+6. Provide one more test (test 5) for the findSmallestDiff method. Briefly describe your test and write the call to assertEquals here.
+Ans. The other test would be for all negative elements in the array. The array would be. arr4 = new int[] {-10,-5,-15,-4}; and the assertEqauls would be: 
+	assertEquals(-11, DiffUtil.findSmallestDiff(arr4));
+
+7. Briefly describe your unit tests for Assignment 1.
+
+Ans.
+ 1.testGetPixel-Verifies pixel values are correctly retrieved from various positions within an image.
+2.testEquals - Checks if two images with identical pixels and dimensions are considered equal.
+3.averageBrightness- Confirms that the average brightness of an image is calculated accurately.
+4.normalized- Ensures that the image is correctly normalized to a target brightness level.
+5.mirrored- Tests that the image is properly mirrored along the vertical axis.
+6.cropped- Verifies that a specified region of the image is accurately cropped.
+7.squarified- Ensures that non-square images are correctly converted to square dimension.
+8.testGetPixelThrowsOnNegativeX-Confirms an exception is thrown when accessing a pixel with an invalid negative index.
+
+
+
+
+
+
+
+
+
